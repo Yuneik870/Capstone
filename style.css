@@ -1,0 +1,31 @@
+
+body > header{
+  background-color: rgb(216, 158, 255);
+}
+body > header > div > img{
+  width: 300px;
+}
+body > nav{
+  background-color: rgb(255, 0, 85);
+  border:20px;
+  display: flex;
+}
+body > p{
+  text-align: center;
+  font-size: 20px;
+  font-family: 'Nunito', sans-serif;
+  background-color: white;
+  color: rgb(201, 0, 43);
+}
+body > nav > ul > li{
+  display: flex;
+  justify-content: space-around;
+}
+#search{
+  display: flex;
+  justify-content: flex-end;
+}
+body > nav > ul > li > i.fas.fa-user-circle{
+  display: flex;
+  justify-content: end;
+}

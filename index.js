@@ -13,14 +13,14 @@ function render(st) {
   ${Footer()}
   `;
   router.updatePageLinks();
-  addEventListeners();
+  addEventListeners(state);
 }
 
 function addEventListeners(st) {
   document.querySelectorAll("nav a").forEach(navLink =>
     navLink.addEventListener("click", event => {
       event.preventDefault();
-      render(state[event.target.title]);
+      render(st[event.target.title]);
     })
   );
 }
@@ -28,9 +28,9 @@ function addEventListeners(st) {
 router
   .on({
     "/": () => render(state.Home),
-    ":page": params => {
-      let page = capitalize(params.data.page);
-      render(state[page]);
+    ":view": params => {
+      let view = capitalize(params.data.view);
+      render(state[view]);
     }
   })
   .resolve();

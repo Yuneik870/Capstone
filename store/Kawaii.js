@@ -1,4 +1,4 @@
 export default {
-  Header: "This is the Kawaii page",
-  View: "Kawaii"
+  header: "This is the Kawaii page",
+  view: "Kawaii"
 };

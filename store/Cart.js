@@ -1,4 +1,4 @@
 export default {
-  Header: "Cart",
-  View: "This is your Cart"
+  header: "Cart",
+  view: "This is your Cart"
 };

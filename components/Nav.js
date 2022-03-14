@@ -3,12 +3,10 @@ import html from "html-literal";
 export default links => html`
   <nav>
     <ul>
-      <li>
-        ${links.map(
-          el =>
-            `<li><a href="/${el.title}" title="${el.title}" data-navigo>${el.text}</a></li>`
-        )}
-      </li>
+      ${links.map(
+        el =>
+          `<li><a href="/${el.title}" title="${el.title}" data-navigo>${el.text}</a><li>`
+      )}
     </ul>
     <label for="search">Search</label>
     <input type="search" name="search" id="search" placeholder="search" />

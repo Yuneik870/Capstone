@@ -1,3 +1,20 @@
+#root > nav > ul{
+  text-align: justify;
+}
+
+#root > header > h1{
+  font-family: 'Sansita Swashed', cursive;
+}
+
+body > header > div > h1 > b{
+  font-family: 'Sansita Swashed', cursive;
+  color:rgb(255, 1, 77)
+}
+
+body > header > div > img{
+  width: 200px;
+  height: 200px;
+}
 
 body > header{
   background-color: rgb(216, 158, 255);
@@ -5,10 +22,11 @@ body > header{
 body > header > div > img{
   width: 300px;
 }
-body > nav{
+#root > nav{
   background-color: rgb(255, 0, 85);
   border:20px;
   display: flex;
+  justify-content: space-around;
 }
 body > p{
   text-align: center;
@@ -17,7 +35,7 @@ body > p{
   background-color: white;
   color: rgb(201, 0, 43);
 }
-body > nav > ul > li{
+#root > nav > ul{
   display: flex;
   justify-content: space-around;
 }

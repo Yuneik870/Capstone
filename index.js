@@ -3,6 +3,8 @@ import * as state from "./store";
 import Navigo from "navigo";
 import { capitalize } from "lodash";
 
+import axios from "axios";
+
 const router = new Navigo("/");
 
 function render(st) {
@@ -44,8 +46,23 @@ router.hooks({
           state.Home.weather.feelsLike = response.data.main.feels_like;
           state.Home.weather.description = response.data.weather[0].main;
           done();
+        })
+        .catch(err => console.log(err));
+    } else if (page === "Shop") {
+      axios
+        .get(`${process.env.PLACEHOLDER_PRODUCTS_API_URL}`)
+        .then(response => {
+          console.log(response.data);
+          state.Shop.products = response.data;
+          done();
+        })
+        .catch(error => {
+          console.log("An error has ocurred", error);
         });
+    } else {
+      done();
     }
+  }
 });
 
 router

@@ -2,9 +2,9 @@
   text-align: justify;
 }
 
-#root > header > h1{
+/* #root > header > h1{
   font-family: 'Sansita Swashed', cursive;
-}
+} */
 
 body > header > div > h1 > b{
   font-family: 'Sansita Swashed', cursive;

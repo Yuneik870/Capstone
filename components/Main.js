@@ -1,7 +1,6 @@
 import html from "html-literal";
+import * as views from "./views";
 
 export default st => html`
-  <header>
-    <h1>${st.header}</h1>
-  </header>
+  ${views[st.view](st)}
 `;

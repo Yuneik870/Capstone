@@ -1,4 +1,4 @@
-import { Nav, Logo, Header, Footer } from "./components";
+import { Nav, Logo, Footer, Main } from "./components";
 import * as state from "./store";
 import Navigo from "navigo";
 import { capitalize } from "lodash";
@@ -9,8 +9,8 @@ const router = new Navigo("/");
 
 function render(st) {
   document.querySelector("#root").innerHTML = `
-  ${Header(st)}
   ${Nav(state.Links)}
+  ${Main(st)}
   ${Logo()}
   ${Footer()}
   `;
@@ -29,12 +29,12 @@ function addEventListeners(st) {
 
 router.hooks({
   before: (done, params) => {
-    const page =
-      params && params.data && params.data.page
-        ? capitalize(params.data.page)
+    const view =
+      params && params.data && params.data.view
+        ? capitalize(params.data.view)
         : "Home";
 
-    if (page === "Home") {
+    if (view === "Home") {
       axios
         .get(
           `https://api.openweathermap.org/data/2.5/weather?q=st.%20louis&appid=${process.env.OPEN_WEATHER_MAP_API_KEY}`
@@ -48,7 +48,7 @@ router.hooks({
           done();
         })
         .catch(err => console.log(err));
-    } else if (page === "Shop") {
+    } else if (view === "Kawaii") {
       axios
         .get(`${process.env.PLACEHOLDER_PRODUCTS_API_URL}`)
         .then(response => {

@@ -3,5 +3,5 @@ export default [
   { title: "Shop", text: "Shop" },
   { title: "Kawaii", text: "Kawaii" },
   { title: "Anime", text: "Anime" },
-  { title: "AboutUs", text: "About US" }
+  { title: "About", text: "About" }
 ];

@@ -2,11 +2,35 @@
   text-align: justify;
 }
 
+#root > nav > ul > a:nth-child(1){
+  display: block;
+  color: white;
+  font-family: 'Nunito', sans-serif;
+}
+
+#search{
+  border-radius: 30px;
+}
+
+#root > nav > i.fas.fa-shopping-cart{
+  color: white;
+}
+
+#root > img{
+  width: 300px;
+  height:200px;
+}
+
+body > div.Note{
+  margin: 2px;
+  border: 3px solid black;
+}
+
 /* #root > header > h1{
   font-family: 'Sansita Swashed', cursive;
 } */
 
-body > header > div > h1 > b{
+body > div.Note > p > b{
   font-family: 'Sansita Swashed', cursive;
   color:rgb(255, 1, 77)
 }
@@ -24,11 +48,13 @@ body > header > div > img{
 }
 #root > nav{
   background-color: rgb(255, 0, 85);
-  border:20px;
+  border-bottom-left-radius:5px;
+  border-bottom-right-radius: 5px;
   display: flex;
   justify-content: space-around;
+
 }
-body > p{
+body > div.Note{
   text-align: center;
   font-size: 20px;
   font-family: 'Nunito', sans-serif;
@@ -39,11 +65,9 @@ body > p{
   display: flex;
   justify-content: space-around;
 }
-#search{
-  display: flex;
-  justify-content: flex-end;
-}
-body > nav > ul > li > i.fas.fa-user-circle{
+
+#root > nav > i.fas.fa-user-circle{
   display: flex;
   justify-content: end;
+  color: white
 }

@@ -12,6 +12,6 @@ export default links => html`
     <input type="search" name="search" id="search" placeholder="search" />
     <i class="far fa-search"></i>
     <i type="button" href="Cart.html" class="fas fa-shopping-cart"></i>
-    <i class="fas fa-user-circle"></i>
+    <i type="button" class="fas fa-user-circle"></i>
   </nav>
 `;

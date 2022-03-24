@@ -1,33 +1,21 @@
-import { Nav, Logo, Footer, Main } from "./components";
+import { Nav, Header, Footer, Main } from "./components";
 import * as state from "./store";
 import Navigo from "navigo";
 import { capitalize } from "lodash";
-
-import Cart from "./store/Cart.js";
-
 import axios from "axios";
 
 const router = new Navigo("/");
 
-function render(st) {
+function render(st = state.Home) {
   console.log("Render State", st);
   document.querySelector("#root").innerHTML = `
   ${Nav(state.Links)}
   ${Main(st)}
-  ${Logo()}
+  ${Header(st)}
   ${Footer()}
   `;
   router.updatePageLinks();
-  addEventListeners(state);
-}
-
-function cart(st) {
-  document
-    .querySelector("fas fa-shopping-cart")
-    .addEventListener("click", event => {
-      event.preventDefault();
-      render(st[event.target.Cart]);
-    });
+  addEventListeners(st);
 }
 
 function addEventListeners(st) {
@@ -37,6 +25,13 @@ function addEventListeners(st) {
       render(st[event.target.title]);
     })
   );
+  document.getElementsByClassName(`fas fa-shopping-cart`).onclick = function() {
+    open("Cart.html");
+  };
+
+  document.getElementById(`search`).onclick = function() {
+    alert(`This is a placeholder`);
+  };
 }
 
 router.hooks({
@@ -64,8 +59,19 @@ router.hooks({
       axios
         .get(`${process.env.PLACEHOLDER_PRODUCTS_API_URL}`)
         .then(response => {
-          console.log(response.data);
+          console.log(response.data[0].title);
           state.Shop.products = response.data;
+          done();
+        })
+        .catch(error => {
+          console.log("An error has ocurred", error);
+        });
+    } else if (view === "Kawaii") {
+      axios
+        .get(`${process.env.PLACEHOLDER_JEWELRY}`)
+        .then(response => {
+          console.log(response.data);
+          state.Kawaii.jewelry = response.data;
           done();
         })
         .catch(error => {

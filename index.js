@@ -6,7 +6,7 @@ import axios from "axios";
 
 const router = new Navigo("/");
 
-function render(st) {
+function render(st = state.Home) {
   console.log("Render State", st);
   document.querySelector("#root").innerHTML = `
   ${Nav(state.Links)}
@@ -19,10 +19,13 @@ function render(st) {
 }
 
 function addEventListeners(st) {
+  //st in here is view state not application st
+  console.log("ADD EVENT LISTENERS STATE", st);
   document.querySelectorAll("nav a").forEach(navLink =>
     navLink.addEventListener("click", event => {
+      console.log("CLICKED", event.target.title);
       event.preventDefault();
-      render(st[event.target.title]);
+      render(state[event.target.title]);
     })
   );
   document.getElementsByClassName(`fas fa-shopping-cart`).onclick = function() {
@@ -36,17 +39,20 @@ function addEventListeners(st) {
 
 router.hooks({
   before: (done, params) => {
+    console.log("made it to hooks");
     const view =
       params && params.data && params.data.view
         ? capitalize(params.data.view)
         : "Home";
 
     if (view === "Home") {
+      console.log("HIT HOME");
       axios
         .get(
           `https://api.openweathermap.org/data/2.5/weather?q=st.%20louis&appid=${process.env.OPEN_WEATHER_MAP_API_KEY}`
         )
         .then(response => {
+          console.log("THEN RESPONSE", response);
           state.Home.weather = {};
           state.Home.weather.city = response.data.name;
           state.Home.weather.temp = response.data.main.temp;
@@ -86,7 +92,10 @@ router.hooks({
 router
   .on({
     // eslint-disable-next-line no-undef
-    "/": () => render(st),
+    "/": () => {
+      console.log("made it to router on default");
+      render(state.Home);
+    },
     ":view": params => {
       console.log("Inside Router", params);
       let view = capitalize(params.data.view);

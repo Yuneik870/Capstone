@@ -6,7 +6,7 @@ import axios from "axios";
 
 const router = new Navigo("/");
 
-function render(st = state.Home) {
+function render(st) {
   console.log("Render State", st);
   document.querySelector("#root").innerHTML = `
   ${Nav(state.Links)}
@@ -85,7 +85,8 @@ router.hooks({
 
 router
   .on({
-    "/": () => render(state.Home),
+    // eslint-disable-next-line no-undef
+    "/": () => render(st),
     ":view": params => {
       console.log("Inside Router", params);
       let view = capitalize(params.data.view);

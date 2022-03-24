@@ -4,7 +4,9 @@
   text-align: center;
   width: 100%;
 }
-
+#root{
+  background-image: linear-gradient(white,rgb(255, 62, 88), rgb(255, 0, 64));
+}
 #root > nav > ul > a:nth-child(1){
   display: block;
   color: white;
@@ -41,6 +43,16 @@
 
 #root > nav > i.fas.fa-shopping-cart{
   color: white;
+}
+
+.Shop > img{
+  width: 200px;
+  height:200px;
+}
+
+#Products{
+  background-color: white;
+  border-radius: 5px;
 }
 
 #root > img{

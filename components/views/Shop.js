@@ -7,6 +7,7 @@ export default st => html`
       product => `<div class="Shop" data-id="${product.id}">
     ${product.title}
     <img src="${product.image}"/>
+    <h3 type="button" class="Add">Add To Cart</h3>
     </div>`
     )}
   </section>

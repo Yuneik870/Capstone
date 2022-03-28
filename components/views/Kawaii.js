@@ -6,6 +6,7 @@ export default st => html`
     jewelry => `<div class="Jewelry" data-id="${jewelry.id}">
   ${jewelry.title}
   <img src="${jewelry.image}"/>
+  <h3 type="button" class="Add">Add To Cart</h3>
   </div>`
   )}
 `;

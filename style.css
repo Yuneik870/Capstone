@@ -100,7 +100,7 @@ body > header > div > img{
   justify-content: space-around;
 
 }
-#Home > h1 > b{
+#root > h1 > b{
   font-family: 'Nunito', sans-serif;
   color: rgb(255, 9, 70);
   background-color: white;

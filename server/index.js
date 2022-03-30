@@ -12,7 +12,7 @@ const express = require("express");
 
 const app = express();
 
-const reviews = require("./routers/reviews");
+const reviews = require("./routers/checkouts");
 
 const PORT = process.env.PORT || 4040;
 
@@ -47,3 +47,11 @@ app.use("/reviews", reviews);
 app.get("/status", (request, response) => {
   response.send(JSON.stringify({ message: "Service healthy" }));
 });
+
+app.post("/", (request, response) => {
+  const body = request.body;
+  body.date = Date.now();
+  response.json(body);
+});
+
+app.listen(PORT, () => console.log(`Listening on port ${PORT}`));

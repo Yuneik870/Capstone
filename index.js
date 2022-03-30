@@ -29,7 +29,7 @@ function addEventListeners(st) {
     })
   );
   document.getElementsByClassName(`fas fa-shopping-cart`).onclick = function() {
-    open("Cart.html");
+    render(state.Cart);
   };
 
   document.getElementById(`search`).onclick = function() {

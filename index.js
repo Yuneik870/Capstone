@@ -28,13 +28,13 @@ function addEventListeners(st) {
       render(state[event.target.title]);
     })
   );
-  document.getElementsByClassName(`fas fa-shopping-cart`).onclick = function() {
+  document.getElementById("shoppingCart").onclick = function() {
     render(state.Cart);
   };
 
-  document.getElementById(`search`).onclick = function() {
-    alert(`This is a placeholder`);
-  };
+  // document.getElementById("search").onclick = function() {
+  //   alert(`This is a placeholder`);
+  // };
 }
 
 router.hooks({

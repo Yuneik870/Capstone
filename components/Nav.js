@@ -9,9 +9,15 @@ export default links => html`
       )}
     </ul>
     <!-- <label for="search">Search</label> -->
-    <input type="search" name="search" id="search" placeholder="search" />
-    <i class="far fa-search"></i>
-    <i type="button" href="Cart.html" class="fas fa-shopping-cart"></i>
+    <!-- <input type="search" name="search" id="search" placeholder="search" />
+    <i class="far fa-search"></i> -->
+    <i
+      type="button"
+      href="/Cart"
+      id="shoppingCart"
+      class="fas fa-shopping-cart"
+      data-navigo
+    ></i>
     <i type="button" class="fas fa-user-circle"></i>
   </nav>
 `;

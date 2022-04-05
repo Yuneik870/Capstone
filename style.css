@@ -5,6 +5,47 @@
   width: 100%;
 }
 
+#root > h3{
+  font-family: 'Nunito';
+  color: white;
+  background-color: rgb(66, 0, 128);
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+#root > h1{
+  font-size: 40px;
+  font-family: Sansita Swashed,cursive;
+  color: black;
+  text-align: center;
+  text-shadow: 3px 0px 0px rgb(255, 35, 171);
+  text-decoration: underline;
+}
+
+#Products > h1{
+  font-size: 40px;
+  font-family: Sansita Swashed,cursive;
+  color: black;
+  text-align: center;
+  text-shadow: 3px 0px 0px rgb(48, 214, 255);
+  text-decoration: underline;
+}
+#Home > h1 > b{
+  font-size: 40px;
+  font-family: Sansita Swashed,cursive;
+  color: black;
+  text-align: center;
+  text-shadow: 3px 0px 0px rgb(66, 0, 128);
+  text-decoration: underline;
+}
+
+#root > div{
+  margin: 2px;
+  border: 3px solid black;
+  font-family: 'Sansita Swashed', cursive;
+  color:rgb(255, 1, 77)
+}
+
 html{
   background-image: linear-gradient(white,rgb(255, 62, 88), rgb(255, 0, 64));
 }
@@ -15,6 +56,13 @@ html{
   font-family: 'Nunito', sans-serif
   ;
 }
+
+#root > pre > code{
+  background-color: white;
+  border-radius: 5px;
+}
+
+
 
 #Products > div{
   border-top: 2px solid gray
@@ -86,12 +134,7 @@ html{
   height:200px;
 }
 
-#root > div{
-  margin: 2px;
-  border: 3px solid black;
-  font-family: 'Sansita Swashed', cursive;
-  color:rgb(255, 1, 77)
-}
+
 
 /* #root > header > h1{
   font-family: 'Sansita Swashed', cursive;
@@ -116,12 +159,7 @@ body > header > div > img{
   justify-content: space-around;
 
 }
-#Home > h1 > b{
-  font-family: 'Nunito', sans-serif;
-  color: rgb(255, 9, 70);
-  background-color: white;
-  text-align: center;
-}
+
 #root > nav > ul{
   display: flex;
   justify-content: space-around;

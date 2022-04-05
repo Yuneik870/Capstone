@@ -26,18 +26,29 @@ function addEventListeners(st) {
   //   render(state.Cart);
   // };
 
+  // if (st.view === "Shop") {
+  //   console.log(st.view);
+  //   for (let element of document.getElementsByClassName("Add")) {
+  //     element.onclick = button => {
+  //       console.log("click");
+  //       // render(state.Cart);
+  //       console.log(state.Shop.products[button.target.dataset.product]);
+  //       // state.Cart.items.push(
+  //       //   state.Shop.products[button.target.dataset.product]
+  //       // );
+  //       state.Cart.items = [state.Shop.products[button.target.dataset.product]];
+  //       window.location.href = "/Cart";
+  //     };
+  //   }
+  // }
+
   if (st.view === "Shop") {
     console.log(st.view);
     for (let element of document.getElementsByClassName("Add")) {
       element.onclick = button => {
         console.log("click");
-        // render(state.Cart);
-        console.log(state.Shop.products[button.target.dataset.product]);
-        // state.Cart.items.push(
-        //   state.Shop.products[button.target.dataset.product]
-        // );
-        state.Cart.items = [state.Shop.products[button.target.dataset.product]];
-        window.location.href = "/Cart";
+        state.Cart.items.push(st.products[button.target.dataset.product]);
+        router.navigate("/Cart");
       };
     }
   }

@@ -21,16 +21,26 @@ function render(st = state.Home) {
 function addEventListeners(st) {
   //st in here is view state not application st
   console.log("ADD EVENT LISTENERS STATE", st);
-  document.querySelectorAll("nav a").forEach(navLink =>
-    navLink.addEventListener("click", event => {
-      console.log("CLICKED", event.target.title);
-      event.preventDefault();
-      render(state[event.target.title]);
-    })
-  );
-  document.getElementById("shoppingCart").onclick = function() {
-    render(state.Cart);
-  };
+
+  // document.getElementById("shoppingCart").onclick = function() {
+  //   render(state.Cart);
+  // };
+
+  if (st.view === "Shop") {
+    console.log(st.view);
+    for (let element of document.getElementsByClassName("Add")) {
+      element.onclick = button => {
+        console.log("click");
+        // render(state.Cart);
+        console.log(state.Shop.products[button.target.dataset.product]);
+        // state.Cart.items.push(
+        //   state.Shop.products[button.target.dataset.product]
+        // );
+        state.Cart.items = [state.Shop.products[button.target.dataset.product]];
+        window.location.href = "/Cart";
+      };
+    }
+  }
 
   // document.getElementById("search").onclick = function() {
   //   alert(`This is a placeholder`);
@@ -66,7 +76,9 @@ router.hooks({
         .get(`${process.env.PLACEHOLDER_PRODUCTS_API_URL}`)
         .then(response => {
           console.log(response.data[0].title);
+          console.log(response.data);
           state.Shop.products = response.data;
+          state.Shop.price = response.price;
           done();
         })
         .catch(error => {

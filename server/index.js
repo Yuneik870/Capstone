@@ -12,7 +12,7 @@ const express = require("express");
 
 const app = express();
 
-const reviews = require("./routers/checkouts");
+const checkouts = require("./routers/checkouts");
 
 const PORT = process.env.PORT || 4040;
 
@@ -42,7 +42,7 @@ const logging = (request, response, next) => {
 app.use(express.json());
 app.use(logging);
 
-app.use("/reviews", reviews);
+app.use("/checkouts", checkouts);
 
 app.get("/status", (request, response) => {
   response.send(JSON.stringify({ message: "Service healthy" }));

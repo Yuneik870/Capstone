@@ -1,19 +1,16 @@
+const { url } = require("inspector");
 const mongoose = require("mongoose");
 
 const checkOutSchema = new mongoose.Schema({
-  retailer: {
-    type: String,
+  image: {
+    type: url,
     required: true
   },
-  product: {
+  title: {
     type: String,
     required: true
   },
   price: {
-    type: Number,
-    required: true
-  },
-  priceTotal: {
     type: Number,
     required: true
   }

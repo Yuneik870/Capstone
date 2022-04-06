@@ -45,9 +45,9 @@ function addEventListeners(st) {
   if (st.view === "Shop") {
     console.log(st.view);
     for (let element of document.getElementsByClassName("Add")) {
-      element.onclick = button => {
-        console.log("click");
-        state.Cart.items.push(st.products[button.target.dataset.product]);
+      element.onclick = event => {
+        console.log(st.products[event.target.dataset.product]);
+        state.Cart.items.push(st.products[event.target.dataset.product]);
         router.navigate("/Cart");
       };
     }

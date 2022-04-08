@@ -22,26 +22,6 @@ function addEventListeners(st) {
   //st in here is view state not application st
   console.log("ADD EVENT LISTENERS STATE", st);
 
-  // document.getElementById("shoppingCart").onclick = function() {
-  //   render(state.Cart);
-  // };
-
-  // if (st.view === "Shop") {
-  //   console.log(st.view);
-  //   for (let element of document.getElementsByClassName("Add")) {
-  //     element.onclick = button => {
-  //       console.log("click");
-  //       // render(state.Cart);
-  //       console.log(state.Shop.products[button.target.dataset.product]);
-  //       // state.Cart.items.push(
-  //       //   state.Shop.products[button.target.dataset.product]
-  //       // );
-  //       state.Cart.items = [state.Shop.products[button.target.dataset.product]];
-  //       window.location.href = "/Cart";
-  //     };
-  //   }
-  // }
-
   if (st.view === "Shop") {
     console.log(st.view);
     for (let element of document.getElementsByClassName("Add")) {
@@ -52,7 +32,19 @@ function addEventListeners(st) {
       };
     }
   }
-
+  console.log(st.view);
+  if (st.view === "Cart") {
+    for (let element of document.getElementsByClassName("Remove")) {
+      element.onclick = event => {
+        console.log(event.target.dataset.product);
+        console.log(state.Cart.items);
+        // debugger;
+        state.Cart.items.splice(event.target.dataset.product, 1);
+        console.log(state.Cart.items);
+        render(state.Cart);
+      };
+    }
+  }
   // document.getElementById("search").onclick = function() {
   //   alert(`This is a placeholder`);
   // };

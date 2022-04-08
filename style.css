@@ -18,7 +18,8 @@
   font-family: Sansita Swashed,cursive;
   color: black;
   text-align: center;
-  text-shadow: 3px 0px 0px rgb(255, 35, 171);
+  text-shadow: 3px 0px 0px rgb(35 255 252)
+                2px 0px 0px rgb(59, 37, 255);
   text-decoration: underline;
 }
 
@@ -134,12 +135,28 @@ html{
   height:200px;
 }
 
+.LogoImage {
+  background: transparent;
+}
+#root > div{
+background-color: white;
+    border-radius: 5px;
+}
+#Products{
+  margin: 17px;
+}
 
+#Home{
+display: flex;
+    justify-content: center;
+}
 
 /* #root > header > h1{
   font-family: 'Sansita Swashed', cursive;
 } */
-
+body {
+  margin: 0px;
+}
 body > header > div > img{
   width: 200px;
   height: 200px;
@@ -170,4 +187,19 @@ body > header > div > img{
   justify-content: end;
   color: white;
   cursor: pointer;
+}
+/*Cart Styling*/
+.itemTitle{
+  color: black;
+}
+
+.itemImage{
+  width: 150px;
+}
+
+.productPrice{
+
+}
+.cartProduct{
+
 }

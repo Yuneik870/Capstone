@@ -27,9 +27,9 @@ export default st => {
           <p class="itemPrice">$${product.price}</p>
           <p class="itemRating">${product.rating}</p>
           <button data-product="${index}" class="Remove">X</button>
-        </div>
-        <button>CheckOut</button>`;
+        </div>`;
     })}
     <p>Total: $${total}</p>
+    <button class="CheckOut">CheckOut</button>
   `;
 };

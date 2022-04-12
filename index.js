@@ -48,6 +48,10 @@ function addEventListeners(st) {
   document.getElementsByClassName("fas fa-user-circle").onclick = function() {
     render(state.Profile);
   };
+
+  // document.getElementsByClassName("CheckOut").onclick = function() {
+  //   alert(`Your purchase has been made!`);
+  // };
   //   alert(`This is a placeholder`);
   // document.getElementById("search").onclick = function() {
   //   alert(`This is a placeholder`);

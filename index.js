@@ -45,6 +45,10 @@ function addEventListeners(st) {
       };
     }
   }
+  document.getElementsByClassName("fas fa-user-circle").onclick = function() {
+    render(state.Profile);
+  };
+  //   alert(`This is a placeholder`);
   // document.getElementById("search").onclick = function() {
   //   alert(`This is a placeholder`);
   // };

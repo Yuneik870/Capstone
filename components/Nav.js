@@ -18,6 +18,6 @@ export default links => html`
       class="fas fa-shopping-cart"
       data-navigo
     ></i>
-    <i type="button" class="fas fa-user-circle"></i>
+    <i type="button" href="/Profile" class="fas fa-user-circle" data-navigo></i>
   </nav>
 `;

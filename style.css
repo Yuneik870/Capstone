@@ -4,6 +4,10 @@
   text-align: center;
   width: 100%;
 }
+body > header > div > img{
+background-color: white;
+    box-shadow: 5px 5px 0px pu
+}
 
 #root > h3{
   font-family: 'Nunito';
@@ -118,6 +122,8 @@ html{
 #root > nav > i.fas.fa-shopping-cart{
   color: white;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 .Shop > img{

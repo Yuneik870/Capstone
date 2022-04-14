@@ -4,6 +4,20 @@
   text-align: center;
   width: 100%;
 }
+
+#Jewelry{
+  background-color: white;
+  border-radius: 5px;
+}
+
+#Jewelry > div{
+  border-top: 2px solid gray;
+}
+
+.AddToCart{
+  font-family: 'Nunito', sans-serif;
+  background-color: rgb(255, 0, 76);
+}
 body > header > div > img{
 background-color: white;
     box-shadow: 5px 5px 0px purple
@@ -47,10 +61,8 @@ background-color: white;
 }
 
 #root > div{
-  margin: 2px;
-  border: 3px solid black;
-  font-family: 'Sansita Swashed', cursive;
-  color:rgb(255, 1, 77)
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 html{
@@ -70,12 +82,18 @@ html{
 }
 
 
-
 #Products > div{
   border-top: 2px solid gray
   }
 
-#root > div:nth-child(3) > h3{
+  #root > nav > i.fas.fa-user-circle{
+    display: flex;
+    align-items: center;
+  }
+
+  #Jewelry > div > h3{
+  cursor: pointer;
+  font-family: 'Nunito', sans-serif;
   color: white;
   background-color: rgb(255, 0, 76);
   max-width: 110px;
@@ -156,9 +174,6 @@ display: flex;
     justify-content: center;
 }
 
-/* #root > header > h1{
-  font-family: 'Sansita Swashed', cursive;
-} */
 body {
   margin: 0px;
 }
@@ -200,11 +215,4 @@ body > header > div > img{
 
 .itemImage{
   width: 150px;
-}
-
-.productPrice{
-
-}
-.cartProduct{
-
 }

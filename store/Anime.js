@@ -1,4 +1,5 @@
 export default {
   header: "Anime page",
-  view: "Anime"
+  view: "Anime",
+  electronics: []
 };

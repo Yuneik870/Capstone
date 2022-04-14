@@ -32,8 +32,32 @@ function addEventListeners(st) {
       };
     }
   }
+  if (st.view === "Kawaii") {
+    console.log(st.view);
+    for (let element of document.getElementsByClassName("Add")) {
+      element.onclick = event => {
+        console.log(st.jewelry[event.target.dataset.product]);
+        state.Cart.items.push(st.jewelry[event.target.dataset.product]);
+        router.navigate("/Cart");
+      };
+    }
+  }
+  if (st.view === "Anime") {
+    console.log(st.view);
+    for (let element of document.getElementsByClassName("Add")) {
+      element.onclick = event => {
+        console.log(st.electronics[event.target.dataset.product]);
+        state.Cart.items.push(st.electronics[event.target.dataset.product]);
+        router.navigate("/Cart");
+      };
+    }
+  }
   console.log(st.view);
   if (st.view === "Cart") {
+    document.getElementsByClassName("CheckOut").onclick = function() {
+      console.log("You have made a purchase");
+      alert(`Your purchase has been made!`);
+    };
     for (let element of document.getElementsByClassName("Remove")) {
       element.onclick = event => {
         console.log(event.target.dataset.product);
@@ -48,10 +72,10 @@ function addEventListeners(st) {
   document.getElementsByClassName("fas fa-user-circle").onclick = function() {
     render(state.Profile);
   };
-
-  // document.getElementsByClassName("CheckOut").onclick = function() {
-  //   alert(`Your purchase has been made!`);
-  // };
+  // if (st.view === "Profile") {
+  //   document.getElementById("Orders").onclick = function() {
+  //     render(state.Orders);
+  //   };
   //   alert(`This is a placeholder`);
   // document.getElementById("search").onclick = function() {
   //   alert(`This is a placeholder`);
@@ -101,6 +125,17 @@ router.hooks({
         .then(response => {
           console.log(response.data);
           state.Kawaii.jewelry = response.data;
+          done();
+        })
+        .catch(error => {
+          console.log("An error has ocurred", error);
+        });
+    } else if (view === "Anime") {
+      axios
+        .get(`${process.env.PLACEHOLDER_ELECTRONICS}`)
+        .then(response => {
+          console.log(response.data);
+          state.Anime.electronics = response.data;
           done();
         })
         .catch(error => {

@@ -25,7 +25,6 @@ export default st => {
           <h1 class="itemTitle">${product.title}</h1>
           <img class="itemImage" src=${product.image}></img>
           <p class="itemPrice">$${product.price}</p>
-          <p class="itemRating">${product.rating}</p>
           <button data-product="${index}" class="Remove">X</button>
         </div>`;
     })}
